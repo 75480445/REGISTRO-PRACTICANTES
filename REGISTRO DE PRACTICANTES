@@ -1,80 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generar Excel</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página en GitHub Pages</title>
 </head>
 <body>
-  <h1>Generar y Descargar Archivo Excel</h1>
-
-  <div>
-    <h3>Agregar Practicantes</h3>
-    <label for="dni">DNI:</label>
-    <input type="text" id="dni" placeholder="DNI">
-    <label for="nombres">Nombres:</label>
-    <input type="text" id="nombres" placeholder="Nombres">
-    <label for="apellidos">Apellidos:</label>
-    <input type="text" id="apellidos" placeholder="Apellidos">
-    <button onclick="agregarPracticante()">Agregar Practicante</button>
-  </div>
-
-  <div>
-    <h3>Lista de Practicantes</h3>
-    <table id="tabla-practicantes" border="1">
-      <thead>
-        <tr>
-          <th>DNI</th>
-          <th>Nombres</th>
-          <th>Apellidos</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Los practicantes se agregarán aquí -->
-      </tbody>
-    </table>
-  </div>
-
-  <button onclick="exportarExcel()">Exportar a Excel</button>
-
-  <script>
-    // Lista de practicantes
-    const practicantes = [];
-
-    // Función para agregar un practicante
-    function agregarPracticante() {
-      const dni = document.getElementById("dni").value;
-      const nombres = document.getElementById("nombres").value;
-      const apellidos = document.getElementById("apellidos").value;
-
-      // Validación de campos vacíos
-      if (dni && nombres && apellidos) {
-        practicantes.push({ dni, nombres, apellidos });
-
-        // Actualizar la tabla
-        const tabla = document.getElementById("tabla-practicantes").getElementsByTagName('tbody')[0];
-        const row = tabla.insertRow();
-        row.insertCell(0).innerText = dni;
-        row.insertCell(1).innerText = nombres;
-        row.insertCell(2).innerText = apellidos;
-
-        // Limpiar los campos de entrada
-        document.getElementById("dni").value = '';
-        document.getElementById("nombres").value = '';
-        document.getElementById("apellidos").value = '';
-      } else {
-        alert("Por favor, complete todos los campos.");
-      }
-    }
-
-    // Función para exportar a Excel
-    function exportarExcel() {
-      const ws = XLSX.utils.json_to_sheet(practicantes); // Convierte los datos a una hoja de trabajo
-      const wb = XLSX.utils.book_new(); // Crea un libro de trabajo
-      XLSX.utils.book_append_sheet(wb, ws, "Practicantes"); // Agrega la hoja al libro
-      XLSX.writeFile(wb, "practicantes.xlsx"); // Genera y descarga el archivo Excel
-    }
-  </script>
+    <h1>¡Hola, mundo!</h1>
+    <p>Esta es mi página publicada en GitHub Pages.</p>
 </body>
 </html>
